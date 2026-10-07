@@ -33,6 +33,7 @@ public class JwtService {
         .setClaims(claims)
         .setSubject(username)
         .setIssuedAt(new Date(System.currentTimeMillis()))
+        // 5 minute time provided for expiration of token
         .setExpiration(new Date(System.currentTimeMillis() + 1000L * 60 * 5))
         .signWith(getSigningKey(), SignatureAlgorithm.HS256)
         .compact();

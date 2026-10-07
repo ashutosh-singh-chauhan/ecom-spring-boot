@@ -34,12 +34,12 @@ public class UserController {
   @PostMapping ("/login")
   public String login(@RequestBody User user) {
     try {
+      // Verify if the token is correct
       Authentication authentication = authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword())
       );
-
+      // generate the token if Token is correct
       if (authentication.isAuthenticated()) {
-        System.out.println("Came inside the if");
         return jwtService.generateToken(user.getUsername());
       }
 
