@@ -129,6 +129,21 @@ Or build the project:
 ./mvnw clean install
 ```
 
+## Swagger Documentation
+
+Once the application is running, you can access the Swagger UI and OpenAPI docs here:
+
+- Swagger UI: http://localhost:8080/swagger-ui.html
+- Swagger UI (alternate path): http://localhost:8080/swagger-ui/index.html
+- OpenAPI JSON: http://localhost:8080/v3/api-docs
+- OpenAPI YAML: http://localhost:8080/v3/api-docs.yaml
+
+Use the Authorization button in Swagger UI and paste the JWT as:
+
+```http
+Bearer <your-jwt-token>
+```
+
 ## Useful Endpoints
 
 - `POST /register` - register a user

@@ -44,7 +44,7 @@ public class SecurityConfig {
     // .anyRequest().permitAll());
     // Allow anonymous access to registration endpoint, require auth for others
     http.authorizeHttpRequests(req -> req
-      .requestMatchers("/register", "/login").permitAll()
+        .requestMatchers("/register", "/login", "/swagger-ui/**", "/swagger-ui.html").permitAll()
       .anyRequest().authenticated());
     // Allow default username and pass
     http.httpBasic(Customizer.withDefaults());
